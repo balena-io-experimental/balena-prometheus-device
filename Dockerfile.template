@@ -25,6 +25,7 @@ RUN wget https://github.com/prometheus/node_exporter/releases/download/$NODE_EXP
 WORKDIR /
 
 COPY start.sh ./
+COPY app ./
 
 # run when container lands on device
 CMD ["bash", "start.sh"]
