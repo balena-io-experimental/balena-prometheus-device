@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-blinkt": "^1.0.1"
+    "node-blinkt": "Irrelon/node-blinkt#80adf68"
   }
 }
