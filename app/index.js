@@ -1,10 +1,13 @@
-var Blinkt = require('node-blinkt');
-var leds = new Blinkt();
+const Blinkt = require('node-blinkt');
+const leds = new Blinkt();
 leds.setup();
 
-leds.setAllPixels(255, 255, 255, 0.1);
+const DEFAULT_COLOUR = [255, 0, 0];
+
+leds.setAllPixels(255, 255, 255, 1);
 leds.sendUpdate();
+
 setTimeout(() => {
-    leds.clearAll();
+    leds.setAllPixels(...DEFAULT_COLOUR, 0.5);
     leds.sendUpdate();
 }, 1000);
