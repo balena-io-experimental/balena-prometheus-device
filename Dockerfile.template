@@ -25,7 +25,12 @@ RUN wget https://github.com/prometheus/node_exporter/releases/download/$NODE_EXP
 WORKDIR /
 
 COPY start.sh ./
-COPY app ./
+
+RUN mkdir app
+COPY app/package.json /app/package.json
+RUN cd app && npm install --production
+
+COPY app/* /app/
 
 # run when container lands on device
 CMD ["bash", "start.sh"]
