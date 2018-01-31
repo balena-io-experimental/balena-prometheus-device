@@ -8,6 +8,7 @@ leds.setAllPixels(255, 255, 255, 1);
 leds.sendUpdate();
 
 setTimeout(() => {
+    let colour = process.env.COLOUR ? JSON.parse(process.env.COLOUR) : DEFAULT_COLOUR;
     leds.setAllPixels(...DEFAULT_COLOUR, 0.5);
     leds.sendUpdate();
 }, 1000);
